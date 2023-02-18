@@ -1,14 +1,14 @@
-//https://scandigital.com/pages/film-formats#:~:text=35mm%20Slides%20are%20individual%2035mm,wide)%20depending%20on%20the%20manufacturer.
+//https://scandigital.com/pages/film-formats#:~:text=35mm%20Slides%20are%20individual%2035mm,wide)%20depending%20on%20the%20manufacturer
 //35 - 36 x 24 mm
 //H – 30.2 × 16.7 mm
 //C – 25.1 × 16.7 mm
 //P – 30.2 × 9.5 mm
 baseX = 50.8;
 baseY = 50.8;
-windowX = 30.2;
-windowY = 9.5;
+windowX = 25.1;
+windowY = 16.7;
 baseThickness = 3;
-magnetRadius = 3;
+magnetRadius = 2;
 //ToDo: groove for film
 filmX = 10;
 filmY = 10;
@@ -23,9 +23,9 @@ difference(){
     union(){
         translate([0, baseY / 2 - magnetRadius * 2, 0])
             linear_extrude(baseThickness + 2)
-                circle(magnetRadius);
+                circle(magnetRadius, $fn=100);
         translate([0, - baseY / 2 + magnetRadius * 2, 0])
             linear_extrude(baseThickness + 2)
-                circle(magnetRadius);
+                circle(magnetRadius, $fn=100);
     }
 }
